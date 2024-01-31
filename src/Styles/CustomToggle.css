@@ -1,0 +1,37 @@
+.darkmode-icon {
+    transition: transform 0.3s;
+    visibility: hidden;
+}
+
+.darkmode-icon-active {
+    transition-delay: 250ms;
+    transform: rotate(360deg);
+    visibility: visible;
+}
+
+.lightmode-icon {
+    transition: transform 0.3s; 
+    visibility: hidden;
+}
+
+.lightmode-icon-active {
+    transition-delay: 250ms;
+    transform: rotate(180deg);
+    visibility: visible;
+}
+
+.zoom-icon {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease; /* Adjust the transition duration and easing function as needed */
+  }
+  
+  .zoom-icon-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+.button-container:hover{
+    box-shadow: 0 2px 2px var(--shadow); 
+}
+

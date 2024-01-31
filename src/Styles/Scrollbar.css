@@ -1,0 +1,65 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Sidebar {
+  height: 100vh;
+  width: 20rem;
+  /* background-color: var(--sidebar); */
+  background: var(--bg-gradient-b);
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  transition: width 0.3s;
+}
+
+
+.Sidebar.collapsed {
+    width: 20px;
+}
+
+.menu-link-active {
+  background-color: var(--menu-link-active);
+  transition: background-color, transform 500ms;
+  border-right: 2;
+  border-color:  var(--menu-text-active);
+  border-radius: 2;
+}
+
+
+
+.menu-link:hover {
+  background-color: var(--menu-link-active);
+}
+
+.menu-text-active{
+  color: var(--menu-text-active);
+}
+
+
+.menu-text{
+  color: var(--menu-text);
+}
+
+.arrow > div{
+  border-color: var(--menu-text);
+}
+
+
+
+@media screen and (max-width:900px) {
+   
+    .arrow{
+        display: none;
+    }
+    .Sidebar {
+        width: 20px;
+      }
+    .sidebartext{
+        display: none;
+    }
+
+  }

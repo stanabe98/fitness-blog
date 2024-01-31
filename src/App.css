@@ -1,0 +1,149 @@
+* {
+  transition: color 0.3s ease; /* Adjust the duration and easing function as needed */
+}
+
+:root {
+  --background-colour: #f1f5f9;
+  --primary-text-colour: #000000;
+  --menu-text-active: #06b6d4;
+  --switch-ball: var(--menu-text-active);
+  --switch-bg: #d7e2ec;
+  --switch-icon: #000000;
+  --menu-text: #334155;
+  --sidebar: #fafafa;
+  --menu-link-active: #d1d5db;
+  --border-colour: #6b7280;
+  --gradient-colour-1: #fafafa;
+  --gradient-colour-2: #bedfe4;
+  --bg-gradient: linear-gradient(
+    to right,
+    var(--gradient-colour-1),
+    var(--gradient-colour-2)
+  );
+  --bg-gradient-r: linear-gradient(
+    to left,
+    var(--gradient-colour-2),
+    var(--gradient-colour-2)
+  );
+  --bg-gradient-b: linear-gradient(
+    to bottom,
+    var(--gradient-colour-1),
+    var(--gradient-colour-2)
+  );
+  --card-bg: #f5f5f5;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --shadow-button: #06b6d4;
+  --social-icon: #000000;
+  --title:var(--primary-text-colour);
+
+}
+
+[data-theme="dark"] {
+  --background-colour:   #1b1b1d;
+  --primary-text-colour: #ffffffd5;
+  --menu-text-active: #06b6d4;
+  --switch-ball: var(--menu-text-active);
+  --switch-bg: #112830;
+  --switch-bg:   #1b1b1d;
+
+  --switch-icon: #b3d7db;
+  --menu-text: #9fafc5;
+  --sidebar: #fafafa;
+  --menu-link-active: #2d3138;
+  --border-colour: #555658;
+  --gradient-colour-1: #1e4557;
+  --gradient-colour-2: #2d383a;
+
+  --gradient-colour-1: #132e3b;
+  --gradient-colour-1: #21282c;
+
+  --gradient-colour-2: #242526;
+
+  --bg-gradient: linear-gradient(
+    to right,
+    var(--gradient-colour-1),
+    var(--gradient-colour-2)
+  );
+  --bg-gradient-r: linear-gradient(
+    to left,
+    var(--gradient-colour-2),
+    var(--gradient-colour-2)
+  );
+  --bg-gradient-b: linear-gradient(
+    to bottom,
+    var(--gradient-colour-1),
+    var(--gradient-colour-2)
+  );
+  --card-bg: #242526;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --shadow-button: #06b6d4;
+  --social-icon: #06b6d4;
+  --title:#c9d2df;
+
+}
+
+.bg-gradient {
+  background: linear-gradient(
+    to right,
+    #00bcd4,
+    #2196f3
+  ); 
+}
+
+.bg-gradient-b {
+  background: linear-gradient(
+    to bottom,
+    #00bcd4,
+    #2196f3
+  ); /* Replace with your desired colors */
+}
+
+.App {
+  background-color: var(--background-colour);
+}
+/* 
+.cursor {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(73, 73, 89);
+  opacity: 50%;
+  position: fixed;
+  pointer-events: none;
+} */
+
+.image-container {
+  width: 200px;
+  overflow: visible;
+  border: 2px solid black;
+}
+
+.fixed-header {
+  /* position: sticky;
+  top: 0; */
+  z-index: 10;
+  background: var(--bg-gradient);
+  border-bottom: 1px solid var(--border-colour);
+}
+
+.header-title {
+  font-family: system-ui;
+  font-size: 28px;
+}
+
+.footer {
+  background: var(--bg-gradient-r);
+  border-top: 1px solid var(--border-colour);
+  z-index: 1000;
+}
+
+.toggle-buttons {
+}
+
+.social-media-links > a > svg {
+  transition: transform 0.1s ease;
+  cursor: pointer;
+}
+
+.social-media-links > a > svg:hover {
+  transform: scale(1.2);
+}

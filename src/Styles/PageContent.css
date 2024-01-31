@@ -1,0 +1,56 @@
+
+.image-div {
+    width: 300px;
+    overflow: hidden;
+    border: 2px solid black;
+  }
+  
+
+.card{
+  background-color: var(--card-bg);
+  /* background-color: white; */
+}
+
+.zoom-image{
+  box-shadow: 0 4px 8px var(--shadow); 
+}
+
+.target-image{
+  box-shadow: 0 4px 8px var(--shadow); 
+}
+
+.list-item > li::before {
+  content: "➤"; 
+  margin-right: 0.5em; 
+  font-size: 15px;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+p{
+  text-align: left;
+}
+
+
+.black-link {
+  color: var(--primary-text-colour);
+}
+
+
+.page-content{
+  border-left: 1px solid var(--border-colour);
+}
+
+.font-colour{
+  color: var(--primary-text-colour);
+  font-weight: 450;
+  font-family: system-ui;
+}
+
+.product-link:hover{
+  font-size: 17px;
+}

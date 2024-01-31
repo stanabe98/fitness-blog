@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.SecondPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #222831;
+  height: 100vh;
+  font-family: sans-serif;
+  text-align: center;
+  color: #fff;
+}
+
+
+.image-container {
+  width: 400px;
+}
+
+.flowing-image{
+  object-position: -100px 100px;
+}
+
+
+/* Styling for the overlay */
+.overlay {
+  opacity: 0; /* Initially hidden */
+}
+
