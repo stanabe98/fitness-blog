@@ -1,11 +1,11 @@
-import { equipmentlist, navHeader } from "../data/items";
+import { equipmentlist} from "../data/items";
 import { useRef, useState } from "react";
 import "../Styles/PageContent.css";
 import TextContent from "./Text";
 import { Rating } from "@mui/material";
 import { AmazonOutlined } from "@ant-design/icons";
 
-import { useMouseOverZoom2 } from "../Helpers/morehooks";
+import { useMouseOverZoom } from "../Helpers/morehooks";
 import contentStore from "../Helpers/contentStore";
 
 const PageContent: React.FC = () => {
@@ -30,7 +30,7 @@ const PageContent: React.FC = () => {
   );
   const [hoverActive, sethoverActive] = useState(true);
 
-  useMouseOverZoom2(sourceState, cursorState, targetState);
+  useMouseOverZoom(sourceState, cursorState, targetState);
 
   return (
     <>

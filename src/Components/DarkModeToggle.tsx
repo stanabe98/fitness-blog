@@ -3,7 +3,7 @@ import { WiMoonWaningCrescent3, WiDaySunny } from "react-icons/wi";
 
 import "../Styles/CustomToggle.css";
 
-export const CustomToggle: React.FC<{ cb?: () => void }> = ({ cb }) => {
+export const DarkModeToggle: React.FC<{ cb?: () => void }> = ({ cb }) => {
   const [darkMode, setDarkMode] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const ballRef = useRef<HTMLDivElement>(null);

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import contentStore from "./contentStore";
 
-function useMouse2(ref: HTMLElement|null) {
+function useMouse(ref: HTMLElement|null) {
   const [mouse, setMouse] = useState<{
     x: number;
     y: number;
@@ -48,14 +48,14 @@ function useMouse2(ref: HTMLElement|null) {
   return mouse;
 }
 
-export function useMouseOverZoom2(
+export function useMouseOverZoom(
   source: HTMLImageElement|null,
   cursor: HTMLElement|null,
   target: HTMLImageElement|null,
   radius = 75
 ) {
   
-  const { x, y, isActive } = useMouse2(source);
+  const { x, y, isActive } = useMouse(source);
 
   
 

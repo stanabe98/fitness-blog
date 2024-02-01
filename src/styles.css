@@ -24,13 +24,4 @@ body {
   width: 400px;
 }
 
-.flowing-image{
-  object-position: -100px 100px;
-}
-
-
-/* Styling for the overlay */
-.overlay {
-  opacity: 0; /* Initially hidden */
-}
 

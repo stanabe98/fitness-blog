@@ -1,5 +1,5 @@
 * {
-  transition: color 0.3s ease; /* Adjust the duration and easing function as needed */
+  transition: color 0.2s ease; 
 }
 
 :root {
@@ -95,7 +95,7 @@
     to bottom,
     #00bcd4,
     #2196f3
-  ); /* Replace with your desired colors */
+  ); 
 }
 
 .App {
@@ -118,8 +118,6 @@
 }
 
 .fixed-header {
-  /* position: sticky;
-  top: 0; */
   z-index: 10;
   background: var(--bg-gradient);
   border-bottom: 1px solid var(--border-colour);
@@ -134,9 +132,6 @@
   background: var(--bg-gradient-r);
   border-top: 1px solid var(--border-colour);
   z-index: 1000;
-}
-
-.toggle-buttons {
 }
 
 .social-media-links > a > svg {

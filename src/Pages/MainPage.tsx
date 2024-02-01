@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import Scrollbar from "../Components/Scrollbar";
 import PageContent from "../Components/PageContent";
-import { navHeader } from "../data/items";
 import "../App.css";
 import { observer } from "mobx-react";
 import contentStore from "../Helpers/contentStore";
-import { ZoomInOutlined } from "@ant-design/icons";
-import { CustomToggle } from "../Components/CustomToggle";
+import { DarkModeToggle } from "../Components/DarkModeToggle";
 import { ZoomToggle } from "../Components/ZoomToggle";
 
 import {
@@ -36,7 +34,7 @@ const MainPage = () => {
         </div>
 
         <div className="flex items-center toggle-buttons w-52 justify-around absolute right-36  rounded-lg">
-          <CustomToggle cb={()=>setMode(!mode)} />
+          <DarkModeToggle cb={()=>setMode(!mode)} />
 
           <ZoomToggle  cb={()=>contentStore.setZoomOn(!contentStore.zoomOn)}/>
 
@@ -45,7 +43,7 @@ const MainPage = () => {
       </div>
 
       <div className="flex relative">
-        <Scrollbar data={navHeader} />
+        <Scrollbar />
         <PageContent />
       </div>
       <div className="h-[50px] flex footer justify-center items-center  relative">
