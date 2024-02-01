@@ -1,14 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
 import contentStore from "./contentStore";
 
-function useMouse(ref: HTMLElement|null) {
+function useMouse(ref: HTMLElement | null) {
   const [mouse, setMouse] = useState<{
     x: number;
     y: number;
     isActive: boolean;
   }>({ x: 0, y: 0, isActive: false });
 
-  
   useEffect(() => {
     if (ref) {
       const handleMouseMove = (e: MouseEvent) => {
@@ -38,7 +37,7 @@ function useMouse(ref: HTMLElement|null) {
       };
       ref.addEventListener("mousemove", handleMouseMove);
       ref.addEventListener("mouseout", handleMouseOut);
-      ref.addEventListener("scroll", resetMouse );
+      ref.addEventListener("scroll", resetMouse);
       return () => {
         ref.removeEventListener("mousemove", handleMouseMove);
         ref.removeEventListener("mouseout", handleMouseOut);
@@ -49,20 +48,17 @@ function useMouse(ref: HTMLElement|null) {
 }
 
 export function useMouseOverZoom(
-  source: HTMLImageElement|null,
-  cursor: HTMLElement|null,
-  target: HTMLImageElement|null,
+  source: HTMLImageElement | null,
+  cursor: HTMLElement | null,
+  target: HTMLImageElement | null,
   radius = 75
 ) {
-  
   const { x, y, isActive } = useMouse(source);
 
-  
-
   const zoomBounds = useMemo(() => {
-    if(source==null) return
-    if(!contentStore.zoomOn){
-      return
+    if (source == null) return;
+    if (!contentStore.zoomOn) {
+      return;
     }
     const left =
       x < radius
@@ -89,11 +85,11 @@ export function useMouseOverZoom(
   }, [x, y]);
   // move the cursor to the mouse position
   useEffect(() => {
-    if(!contentStore.zoomOn){
-      return
+    if (!contentStore.zoomOn) {
+      return;
     }
-  
-    if (cursor && zoomBounds)   {
+
+    if (cursor && zoomBounds) {
       const { left, top, width, height } = zoomBounds;
       // cursor.current.style.left = `${left}px`;
       cursor.style.left = `${left}px`;
@@ -105,25 +101,22 @@ export function useMouseOverZoom(
   }, [zoomBounds, isActive, source, cursor, target]);
   // draw the zoomed image on the canvas
 
-  useEffect(()=>{
-   
+  useEffect(() => {
+    if (!contentStore.zoomOn) {
+      return;
+    }
+    if (source && target && cursor) {
+      if (isActive) {
+        const ratio = 2;
+        var leftNumber = parseInt(cursor.style.left);
+        var topNumber = parseInt(cursor.style.top);
 
-    if(!contentStore.zoomOn){
-      return
+        target.style.objectPosition = `-${leftNumber * 2}px -${
+          topNumber * 2
+        }px`;
+      } else {
+        target.style.objectPosition = "0px 0px";
+      }
     }
-    if (source && target && cursor){
-     if(isActive){
-       const ratio=2;
-       var leftNumber= parseInt(cursor.style.left)
-       var topNumber= parseInt(cursor.style.top)
-       
-      target.style.objectPosition= `-${leftNumber*2}px -${topNumber*2}px`
-    
-     }
-     else{
-      target.style.objectPosition= '0px 0px';
-     }
-   
-    }
-  },[zoomBounds, isActive, source, cursor, target])
+  }, [zoomBounds, isActive, source, cursor, target]);
 }
